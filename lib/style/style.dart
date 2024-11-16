@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -13,7 +13,7 @@ const colorDarkBlue = Color.fromRGBO(44, 62, 80, 1.0);
 const colorLightGray = Color.fromRGBO(135, 142, 150, 1.0);
 const colorLight = Color.fromRGBO(211, 211, 211, 1.0);
 
-SizedBox ItemSizeBox(child) {
+SizedBox ItemSizeBox(Widget child) {
   return SizedBox(
     width: double.infinity,
     child: Container(
@@ -39,40 +39,40 @@ PinTheme AppOTPStyle() {
   );
 }
 
-TextStyle Head1Text(textColor) {
+TextStyle Head1Text(Color textColor) {
   return TextStyle(
     color: textColor,
     fontSize: 28,
-    fontFamily: 'poppins',
+    fontFamily: 'Poppins',
     fontWeight: FontWeight.w700,
   );
 }
 
-TextStyle Head6Text(textColor) {
+TextStyle Head6Text(Color textColor) {
   return TextStyle(
       color: textColor,
       fontSize: 16,
-      fontFamily: 'poppins',
+      fontFamily: 'Poppins',
       fontWeight: FontWeight.w400);
 }
 
-TextStyle Head7Text(textColor) {
+TextStyle Head7Text(Color textColor) {
   return TextStyle(
       color: textColor,
       fontSize: 13,
-      fontFamily: 'poppins',
+      fontFamily: 'Poppins',
       fontWeight: FontWeight.w400);
 }
 
-TextStyle Head9Text(textColor) {
+TextStyle Head9Text(Color textColor) {
   return TextStyle(
       color: textColor,
       fontSize: 9,
-      fontFamily: 'poppins',
+      fontFamily: 'Poppins',
       fontWeight: FontWeight.w500);
 }
 
-InputDecoration AppInputDecoration(label) {
+InputDecoration AppInputDecoration(String label) {
   return InputDecoration(
       focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: colorGreen, width: 1),
@@ -87,7 +87,7 @@ InputDecoration AppInputDecoration(label) {
       labelText: label);
 }
 
-DecoratedBox AppDropDownStyle(child) {
+DecoratedBox AppDropDownStyle(Widget child) {
   return DecoratedBox(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -98,7 +98,7 @@ DecoratedBox AppDropDownStyle(child) {
           padding: const EdgeInsets.only(left: 30, right: 30), child: child));
 }
 
-SvgPicture ScreenBackground(context) {
+SvgPicture ScreenBackground(BuildContext context) {
   return SvgPicture.asset(
     'assets/images/screen-back.svg',
     alignment: Alignment.center,
@@ -116,7 +116,7 @@ ButtonStyle AppButtonStyle() {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)));
 }
 
-ButtonStyle AppStatusButtonStyle(btnColor) {
+ButtonStyle AppStatusButtonStyle(Color btnColor) {
   return ElevatedButton.styleFrom(
     elevation: 1,
     padding: EdgeInsets.zero,
@@ -126,10 +126,10 @@ ButtonStyle AppStatusButtonStyle(btnColor) {
 
 TextStyle ButtonTextStyle() {
   return const TextStyle(
-      fontSize: 14, fontFamily: 'poppins', fontWeight: FontWeight.w400);
+      fontSize: 14, fontFamily: 'Poppins', fontWeight: FontWeight.w400);
 }
 
-Ink SuccessButtonChild(String ButtonText) {
+Ink SuccessButtonChild(String buttonText) {
   return Ink(
     decoration: BoxDecoration(
         color: colorGreen, borderRadius: BorderRadius.circular(6)),
@@ -137,14 +137,14 @@ Ink SuccessButtonChild(String ButtonText) {
       height: 45,
       alignment: Alignment.center,
       child: Text(
-        ButtonText,
+        buttonText,
         style: ButtonTextStyle(),
       ),
     ),
   );
 }
 
-Container StatusChild(statusText, statusColor) {
+Container StatusChild(String statusText, Color statusColor) {
   return Container(
     alignment: Alignment.center,
     decoration: BoxDecoration(
@@ -159,7 +159,7 @@ Container StatusChild(statusText, statusColor) {
   );
 }
 
-void SuccessToast(msg) {
+void SuccessToast(String msg) {
   Fluttertoast.showToast(
       msg: msg,
       gravity: ToastGravity.BOTTOM,
@@ -170,7 +170,7 @@ void SuccessToast(msg) {
       fontSize: 16.0);
 }
 
-void ErrorToast(msg) {
+void ErrorToast(String msg) {
   Fluttertoast.showToast(
       msg: msg,
       gravity: ToastGravity.BOTTOM,

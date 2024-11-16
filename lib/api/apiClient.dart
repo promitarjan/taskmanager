@@ -2,7 +2,8 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:convert';
-import 'package:taskmanager/Style/Style.dart';
+import 'package:taskmanager/style/style.dart';
+
 import 'package:http/http.dart' as http;
 
 import '../utility/utility.dart';
